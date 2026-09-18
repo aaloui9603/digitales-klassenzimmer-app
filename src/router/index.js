@@ -3,7 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import ClassroomView from '@/views/ClassroomView.vue'
 import StudyPlanerView from '@/views/StudyplanerView.vue'
 import ExamSimulatorView from '@/views/ExamSimulatorView.vue'
-import VocableTrainerView from '@/views/VocableTrainerView.vue'
+import VocableTrainerView from '@/views/VocableTrainingView.vue'
 import LearningTrackerView from '@/views/LearningTrackerView.vue'
 
 
