@@ -9,6 +9,7 @@
   --color-steelblue1: #63B8FF;
   --color-slateblue4: #473C8B;
   --color-royalblue3: #3A5FCD;
+  --color-gray70: #B3B3B3;
   --color-bg-light: color-mix(in srgb, var(--color-aquamarine) 70%, var(--color-steelblue1) 30%);
   --color-bg-dark: color-mix(in srgb, var(--color-slateblue4) 70%, var(--color-royalblue3) 30%);
   --font-sans: 'Roboto', sans-serif;
