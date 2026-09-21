@@ -1,5 +1,7 @@
 @import 'tailwindcss'; 
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -9,4 +11,5 @@
   --color-royalblue3: #3A5FCD;
   --color-bg-light: color-mix(in srgb, var(--color-aquamarine) 70%, var(--color-steelblue1) 30%);
   --color-bg-dark: color-mix(in srgb, var(--color-slateblue4) 70%, var(--color-royalblue3) 30%);
+  --font-sans: 'Roboto', sans-serif;
 }
