@@ -17,6 +17,13 @@ students.value[studentIndex].grades.push(grade)
    students.value.splice(index, 1)
 }
 
-return { students, addStudent, addGrade, removeStudent } 
+function getAverage(studentIndex) {
+const grades = students.value[studentIndex].grades
+if ( grades.length === 0) return 0
+const sum = grades.reduce((total, grade) => total + grade, 0)
+return sum / grades.length
+}
+
+return { students, addStudent, addGrade, removeStudent, getAverage } 
 })
 

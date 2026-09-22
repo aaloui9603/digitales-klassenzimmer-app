@@ -39,6 +39,9 @@ newGrades.value[index] = ''
    <input v-model="newGrades[index]" type="number" />
    <button @click="handleAddGrade(index)">Note eintragen</button>
 </div>
+<div>
+Durchschnitt: {{ classroomStore.getAverage(index).toFixed(2) }}
+</div>
   </li>
 </ul>
 </div>
@@ -46,3 +49,4 @@ newGrades.value[index] = ''
 
 <style scoped>
 </style>
+
