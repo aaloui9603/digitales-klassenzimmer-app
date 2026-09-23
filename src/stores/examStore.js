@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { useLocalStorage } from '@/composables/useLocalStorage.js'
 
 export const useExamStore = defineStore('exam', () => {
   const topics = {
@@ -49,5 +50,22 @@ export const useExamStore = defineStore('exam', () => {
     clearInterval(quizIntervalId)
   }
 
-  return { topics, questions, getRandomTopic, quizTimeLeft, quizIsRunning, startQuizTimer, stopQuizTimer }
+  const score = ref(0)
+
+  function checkAnswer(question, answer) {
+    if (answer === question.correctAnswer) {
+      score.value++
+      return true
+    } else {
+      return false
+    }
+  }
+
+  const history = useLocalStorage('examHistory', [])
+
+  function saveResult() {
+    history.value.push({ score: score.value, date: new Date().toLocaleDateString() })
+  }
+
+  return { topics, questions, getRandomTopic, quizTimeLeft, quizIsRunning, startQuizTimer, stopQuizTimer, score, checkAnswer, history, saveResult }
 })
