@@ -13,40 +13,37 @@ function handleAdd() {
 }
 
 function handleAddGrade(index) {
-classroomStore.addGrade(index, Number(newGrades.value[index]))
-newGrades.value[index] = ''
+  classroomStore.addGrade(index, Number(newGrades.value[index]))
+  newGrades.value[index] = ''
 }
-
 </script>
 
 <template>
- <h1 class="text-blue-600">Classroom View</h1>
+  <h1 class="text-blue-600">Classroom View</h1>
 
-<div class="bg-white/20 backdrop-blur-md border border-gray70 shadow-md rounded-lg p-4 max-w-2xl">
+  <div class="bg-white/20 backdrop-blur-md border border-gray70 shadow-md rounded-lg p-4 max-w-2xl">
+    <label for="student-name">Schülername</label>
+    <input id="student-name" v-model="newStudentName" @keyup.enter="handleAdd" class="mr-4" />
+    <button @click="handleAdd">Eintragen</button>
 
- <input v-model="newStudentName" @keyup.enter="handleAdd" class="mr-4" />
- <button @click="handleAdd">Eintragen</button>
+    <ul>
+      <li v-for="(student, index) in classroomStore.students" :key="index">
+        {{ student.name }}
+        <button @click="classroomStore.removeStudent(index)">Löschen</button>
 
-<ul>
-  
-   <li v-for="(student, index) in classroomStore.students" :key="index">
-     {{ student.name }}
-   <button @click="classroomStore.removeStudent(index)">Löschen</button>
-
-
-<div class="bg-dodgerblue/10 backdrop-blur-md border border-gray76 shadow-[4px_4px_10px_rgba(0,0,0,0.15),-4px_-4px_10px_rgba(255,255,255,0.7)] rounded-lg p-4">
-   Noten: {{ student.grades.join(',') }}
-   <input v-model="newGrades[index]" type="number" />
-   <button @click="handleAddGrade(index)">Note eintragen</button>
-</div>
-<div>
-Durchschnitt: {{ classroomStore.getAverage(index).toFixed(2) }}
-</div>
-  </li>
-</ul>
-</div>
+        <div class="bg-dodgerblue/10 backdrop-blur-md border border-gray76 shadow-[4px_4px_10px_rgba(0,0,0,0.15),-4px_-4px_10px_rgba(255,255,255,0.7)] rounded-lg p-4">
+          Noten: {{ student.grades.join(',') }}
+          <label :for="'grade-input-' + index">Neue Note</label>
+          <input :id="'grade-input-' + index" v-model="newGrades[index]" type="number" />
+          <button @click="handleAddGrade(index)">Note eintragen</button>
+        </div>
+        <div>
+          Durchschnitt: {{ classroomStore.getAverage(index).toFixed(2) }}
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>
 </style>
-
