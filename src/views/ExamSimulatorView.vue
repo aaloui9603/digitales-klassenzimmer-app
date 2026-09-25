@@ -24,12 +24,12 @@ function selectAnswer(answer) {
 
 <template>
   <div>
-    <h1 class="text-cyan-600">Exam Simulator View</h1>
+    <h1 class="text-cyan-600">{{ $t('examTitle') }}</h1>
 
     <div v-if="!isQuizFinished" class="bg-dodgerblue/15 backdrop-blur-lg border border-dodgerblue/30 shadow-xl rounded-3xl p-6 max-w-2xl">
-      <p>Verbleibende Zeit: {{ examStore.quizTimeLeft }} Sekunden</p>
-      <p>Punktzahl: {{ examStore.score }}</p>
-      <button @click="examStore.startQuizTimer()">Start</button>
+      <p>{{ $t('timeRemaining') }} {{ examStore.quizTimeLeft }}</p>
+      <p>{{ $t('score') }} {{ examStore.score }}</p>
+      <button @click="examStore.startQuizTimer()">{{ $t('examStart') }}</button>
 
       <h2>{{ currentQuestion.question }}</h2>
       <ul>
@@ -40,8 +40,8 @@ function selectAnswer(answer) {
     </div>
 
     <div v-else>
-      <p>Quiz beendet! 🎉</p>
-      <p>Deine Punktzahl: {{ examStore.score }} von {{ examStore.questions.length }}</p>
+      <p>{{ $t('quizFinished') }}</p>
+      <p>{{ $t('yourScore') }} {{ examStore.score }} / {{ examStore.questions.length }}</p>
     </div>
   </div>
 </template>
