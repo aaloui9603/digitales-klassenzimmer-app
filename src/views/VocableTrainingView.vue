@@ -5,7 +5,9 @@ const vocableTrainingStore = useVocableTrainingStore()
 </script>
 
 <template>
-  <h1 class="text-yellow-600">{{ $t('vocableTitle') }}</h1>
+  <h1 class="bg-marineblau/80 backdrop-blur-md text-white text-3xl font-bold underline text-center mx-auto w-fit px-6 py-2 rounded-full mb-8">
+  {{ $t('vocableTitle') }}
+</h1>
 
   <ul>
     <li v-for="(vocab, index) in vocableTrainingStore.vocabulary" :key="index">

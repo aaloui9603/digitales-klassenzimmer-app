@@ -18,6 +18,10 @@ function handleAdd() {
 </script>
 
 <template>
+  <h1 class="bg-marineblau/80 backdrop-blur-md text-white text-3xl font-bold underline text-center mx-auto w-fit px-6 py-2 rounded-full mb-8">
+    {{ $t('studyPlaner') }}
+  </h1>
+
   <div class="bg-royalblue2/15 backdrop-blur-lg border border-royalblue2/30 shadow-xl rounded-3xl p-6">
     <label for="subject-input" class="mr-2">{{ $t('subjectLabel') }}</label>
     <input id="subject-input" v-model="newSubject" placeholder="Fach" class="mr-4" />
@@ -41,5 +45,3 @@ function handleAdd() {
     </ul>
   </div>
 </template>
-
-

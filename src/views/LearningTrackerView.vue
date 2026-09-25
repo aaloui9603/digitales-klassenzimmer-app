@@ -16,7 +16,9 @@ const averageVocabInterval = computed(() => {
 </script>
 
 <template>
-  <h1 class="text-gray-600">{{ $t('trackerTitle') }}</h1>
+  <h1 class="bg-marineblau/80 backdrop-blur-md text-white text-3xl font-bold underline text-center mx-auto w-fit px-6 py-2 rounded-full mb-8">
+  {{ $t('trackerTitle') }}
+</h1>
   <p>{{ $t('studentCount') }} {{ classroomStore.students.length }}</p>
   <p>{{ $t('quizAttempts') }} {{ examStore.history.length }}</p>
   <p>{{ $t('currentScore') }} {{ examStore.score }}</p>

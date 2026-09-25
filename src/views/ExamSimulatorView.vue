@@ -24,7 +24,9 @@ function selectAnswer(answer) {
 
 <template>
   <div>
-    <h1 class="text-cyan-600">{{ $t('examTitle') }}</h1>
+    <h1 class="bg-marineblau/80 backdrop-blur-md text-white text-3xl font-bold underline text-center mx-auto w-fit px-6 py-2 rounded-full mb-8">
+  {{ $t('examTitle') }}
+</h1>
 
     <div v-if="!isQuizFinished" class="bg-dodgerblue/15 backdrop-blur-lg border border-dodgerblue/30 shadow-xl rounded-3xl p-6 max-w-2xl">
       <p>{{ $t('timeRemaining') }} {{ examStore.quizTimeLeft }}</p>

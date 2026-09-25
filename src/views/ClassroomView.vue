@@ -19,9 +19,11 @@ function handleAddGrade(index) {
 </script>
 
 <template>
-  <h1 class="text-blue-600">{{ $t('classroomTitle') }}</h1>
+  <h1 class="bg-marineblau/80 backdrop-blur-md text-white text-3xl font-bold underline text-center mx-auto w-fit px-6 py-2 rounded-full mb-12">
+{{ $t('classroomTitle') }}
+</h1>
 
-  <div class="bg-white/20 backdrop-blur-md border border-gray70 shadow-md rounded-lg p-4 max-w-2xl">
+  <div class="bg-white/20 backdrop-blur-md border border-gray70 shadow-md rounded-lg p-4 max-w-2xl ml-6">
     <label for="student-name">{{ $t('studentNameLabel') }}</label>
     <input id="student-name" v-model="newStudentName" @keyup.enter="handleAdd" class="mr-4" />
     <button @click="handleAdd">{{ $t('addButton') }}</button>
