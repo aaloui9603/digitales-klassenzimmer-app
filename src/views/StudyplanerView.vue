@@ -22,23 +22,23 @@ function handleAdd() {
     {{ $t('studyPlaner') }}
   </h1>
 
-  <div class="bg-royalblue2/15 backdrop-blur-lg border border-royalblue2/30 shadow-xl rounded-3xl p-6">
+  <div class="bg-royalblue2/15 backdrop-blur-lg border border-royalblue2/30 shadow-xl rounded-3xl p-6 pb-8">
     <label for="subject-input" class="mr-2">{{ $t('subjectLabel') }}</label>
-    <input id="subject-input" v-model="newSubject" placeholder="Fach" class="mr-4" />
+    <input id="subject-input" v-model="newSubject" placeholder="Fach" class="mr-4 bg-white/20 backdrop-blur-md border border-gray70 rounded-lg px-3 py-2 w-40" />
 
     <label for="date-input" class="mr-2">{{ $t('dateLabel') }}</label>
-    <input id="date-input" v-model="newDate" type="date" class="mr-4" />
+    <input id="date-input" v-model="newDate" type="date" class="mr-4 bg-white/20 backdrop-blur-md border border-gray70 rounded-lg px-3 py-2 w-40" />
 
     <button @click="handleAdd">{{ $t('planButton') }}</button>
 
-    <div class="bg-mediumblue/15 backdrop-blur-lg border border-mediumblue/30 shadow-xl rounded-3xl p-6">
+    <div class="bg-mediumblue/15 backdrop-blur-lg border border-mediumblue/30 shadow-xl rounded-3xl p-6 mt-4">
       {{ pomodoroStore.formattedTime }}
       <button @click="pomodoroStore.startTimer()" class="mr-4">{{ $t('timerStart') }}</button>
       <button @click="pomodoroStore.stopTimer()">{{ $t('timerPause') }}</button>
     </div>
 
-    <ul>
-      <li v-for="(session, index) in studyplanerStore.sessions" :key="index">
+    <ul class="mt-4">
+      <li v-for="(session, index) in studyplanerStore.sessions" :key="index" class="mb-3">
         {{ session.subject }} {{ session.date }}
         <button @click="studyplanerStore.removeSession(index)">{{ $t('removeButton') }}</button>
       </li>
