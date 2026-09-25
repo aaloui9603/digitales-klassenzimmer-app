@@ -5,7 +5,7 @@ import LanguageNavigator from '@/components/LanguageNavigator.vue'
 
 <template>
   <div class="bg-bg-light dark:bg-bg-dark min-h-screen relative pt-20">
-    <div class="absolute top-0 right-0 flex gap-4 z-50">
+    <div class="absolute top-0 right-0 flex gap-4 z-50 items-start">
       <BurgerMenu />
       <LanguageNavigator />
     </div>
