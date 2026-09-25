@@ -30,8 +30,10 @@ function handleAddGrade(index) {
 
     <ul class="mt-4">
       <li v-for="(student, index) in classroomStore.students" :key="index" class="mb-6">
-        {{ student.name }}
-        <button @click="classroomStore.removeStudent(index)">{{ $t('removeButton') }}</button>
+        <div class="flex justify-between items-center">
+          <span>{{ student.name }}</span>
+          <button @click="classroomStore.removeStudent(index)">{{ $t('removeButton') }}</button>
+        </div>
 
         <div class="bg-dodgerblue/10 backdrop-blur-md border border-gray76 shadow-[4px_4px_10px_rgba(0,0,0,0.15),-4px_-4px_10px_rgba(255,255,255,0.7)] rounded-lg p-4 mt-2">
           <span class="mr-3">{{ $t('gradesLabel') }} {{ student.grades.join(',') }}</span>
