@@ -22,7 +22,7 @@ function handleAdd() {
     {{ $t('studyPlaner') }}
   </h1>
 
-  <div class="bg-royalblue2/15 backdrop-blur-lg border border-royalblue2/30 shadow-xl rounded-3xl p-6 pb-8">
+  <div class="bg-royalblue2/15 backdrop-blur-lg border border-royalblue2/30 shadow-xl rounded-3xl p-6 pb-8 ml-6">
     <label for="subject-input" class="mr-2">{{ $t('subjectLabel') }}</label>
     <input id="subject-input" v-model="newSubject" placeholder="Fach" class="mr-4 bg-white/20 backdrop-blur-md border border-gray70 rounded-lg px-3 py-2 w-40" />
 
@@ -39,8 +39,10 @@ function handleAdd() {
 
     <ul class="mt-4">
       <li v-for="(session, index) in studyplanerStore.sessions" :key="index" class="mb-3">
-        {{ session.subject }} {{ session.date }}
-        <button @click="studyplanerStore.removeSession(index)">{{ $t('removeButton') }}</button>
+        <div class="flex justify-between items-center">
+          <span>{{ session.subject }} {{ session.date }}</span>
+          <button @click="studyplanerStore.removeSession(index)">{{ $t('removeButton') }}</button>
+        </div>
       </li>
     </ul>
   </div>
