@@ -15,7 +15,7 @@
   --color-gray76: #C2C2C2;
   --color-gray70: #B3B3B3;
   --color-royalblue2: #436EEE;
-  --color-bg-light: color-mix(in srgb, var(--color-aquamarine) 70%, var(--color-steelblue1) 30%);
-  --color-bg-dark: color-mix(in srgb, var(--color-slateblue4) 70%, var(--color-royalblue3) 30%);
+  --color-bg-light: color-mix(in srgb, var(--color-aquamarine) 60%, var(--color-steelblue1) 40%);
+  --color-bg-dark: color-mix(in srgb, var(--color-slateblue4) 60%, var(--color-royalblue3) 40%);
   --font-sans: 'Roboto', sans-serif;
 }
